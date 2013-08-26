@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Vanilla Music headphone detector</string>
+    <string name="app_name">Headphone detector for Vanilla Music</string>
     <string name="ntfy_autolaunch">Headphones detected: Starting Vanilla Music</string>
 </resources>

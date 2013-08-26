@@ -6,7 +6,7 @@
         android:installLocation="auto">
         <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="16" />
  
-    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:theme="@android:style/Theme.Dialog">
         <activity android:name="VPlug"
                   android:label="@string/app_name">
             <intent-filter>
