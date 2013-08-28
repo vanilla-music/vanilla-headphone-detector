@@ -67,7 +67,7 @@ public class VPlugService extends Service {
 				Toast.makeText(ctx, R.string.ntfy_autolaunch, Toast.LENGTH_SHORT).show();
 
 				ComponentName service = new ComponentName("ch.blinkenlights.android.vanilla","ch.blinkenlights.android.vanilla.PlaybackService");
-				Intent x = new Intent("ch.blinkenlights.android.vanilla.action.TOGGLE_PLAYBACK").setComponent(service);
+				Intent x = new Intent("ch.blinkenlights.android.vanilla.action.PLAY").setComponent(service);
 				x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startService(x);
 			}
