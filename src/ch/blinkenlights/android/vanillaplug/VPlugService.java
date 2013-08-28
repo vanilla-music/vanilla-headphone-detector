@@ -28,6 +28,7 @@ import android.content.IntentFilter;
 import android.content.ComponentName;
 import android.widget.Toast;
 import android.util.Log;
+import android.media.AudioManager;
 
 public class VPlugService extends Service {
 	private final IBinder vplug_binder = new LocalBinder();
@@ -64,12 +65,19 @@ public class VPlugService extends Service {
 			Log.v("VanillaPlug", "Intent "+ia+" received with state "+state);
 
 			if(state == 1) { /* Headset was plugged in */
-				Toast.makeText(ctx, R.string.ntfy_autolaunch, Toast.LENGTH_SHORT).show();
+				AudioManager aM = (AudioManager)ctx.getSystemService(Context.AUDIO_SERVICE);
+				
+				if(aM != null && !aM.isMusicActive()) {
+					Toast.makeText(ctx, R.string.ntfy_autolaunch, Toast.LENGTH_SHORT).show();
+					ComponentName service = new ComponentName("ch.blinkenlights.android.vanilla","ch.blinkenlights.android.vanilla.PlaybackService");
+					Intent x = new Intent("ch.blinkenlights.android.vanilla.action.PLAY").setComponent(service);
+					x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+					startService(x);
+				}
+				else {
+					Toast.makeText(ctx, R.string.ntfy_nolaunch, Toast.LENGTH_SHORT).show();
+				}
 
-				ComponentName service = new ComponentName("ch.blinkenlights.android.vanilla","ch.blinkenlights.android.vanilla.PlaybackService");
-				Intent x = new Intent("ch.blinkenlights.android.vanilla.action.PLAY").setComponent(service);
-				x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-				startService(x);
 			}
 		}
 		

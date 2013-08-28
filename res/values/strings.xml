@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Headphone detector for Vanilla Music</string>
     <string name="ntfy_autolaunch">Headphones detected: Starting Vanilla Music</string>
+    <string name="ntfy_nolaunch">Skipping automatic launch of Vanilla Music. (Sound is already playing)</string>
 </resources>
