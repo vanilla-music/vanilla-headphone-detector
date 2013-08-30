@@ -10,6 +10,6 @@
       android:layout_marginBottom="10px"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="This application will automatically start Vanilla Music after Android broadcasted a HEADSET_PLUG event.\n\n(This is alpha-quality software and yeah: it looks ugly. Will be fixed in the next release ;-) )"
+      android:text="This application will automatically start Vanilla Music after Android broadcasted a HEADSET_PLUG event."
       android:id="@+id/txt_desc" />
 </LinearLayout>
