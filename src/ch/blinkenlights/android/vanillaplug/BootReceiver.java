@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Adrian Ulrich
+ * Copyright (C) 2013-2015 Adrian Ulrich
  *
  *   This file is part of VanillaPlug.
  *
@@ -22,12 +22,10 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 
-import android.util.Log;
 
 public class BootReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.v("VanillaPlug", "Starting up VPlugService");
 		context.startService(new Intent(context, VPlugService.class));
 	}
 }

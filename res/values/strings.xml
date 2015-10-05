@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Headphone detector for Vanilla Music</string>
-    <string name="ntfy_autolaunch">Headphones detected: Starting Vanilla Music</string>
-    <string name="ntfy_nolaunch">Skipping automatic launch of Vanilla Music. (Sound is already playing)</string>
+	<string name="app_name">Headphone detector for Vanilla Music</string>
+	<string name="ntfy_autolaunch">Headphones detected: Starting Vanilla Music</string>
+	<string name="ntfy_nolaunch">Skipping automatic launch of Vanilla Music. (Sound is already playing)</string>
+	<string name="preferences_title">Enable headphone detection</string>
+	<string name="preferences_summary">Launch Vanilla Music automatically after plugging in a pair of headphones</string>
 </resources>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 Adrian Ulrich
+ * Copyright (C) 2013-2015 Adrian Ulrich
  *
  *   This file is part of VanillaPlug.
  *
@@ -19,38 +19,45 @@
 package ch.blinkenlights.android.vanillaplug;
 
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.Menu;
 import android.content.ComponentName;
+import android.content.SharedPreferences;
+import android.content.Intent;
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 
-public class VPlug extends Activity {
-	
-	private Intent bb_service_intent;
-	
+import android.util.Log;
+
+public class VPlug extends PreferenceActivity 
+	implements SharedPreferences.OnSharedPreferenceChangeListener {
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		ComponentName ss_ok;
 		super.onCreate(savedInstanceState);
-		
-		bb_service_intent = new Intent(getApplicationContext(), VPlugService.class);
-		ss_ok             = startService(bb_service_intent);
-		
-		Log.v("VPlug", "ss_ok = "+ss_ok);
-		
-		if(ss_ok != null) {
-//			bindService(bb_service_intent, svc_con, 0);
-			setContentView(R.layout.main);
-		}
+		addPreferencesFromResource(R.xml.preferences);
+		PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
+		// Ensure that the service gets started if it was not running
+		tickleService();
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-//		unbindService(svc_con);
 	}
+
+	@Override
+	public void onSharedPreferenceChanged (SharedPreferences sharedPreferences, String key) {
+		tickleService();
+	}
+
+	/**
+	 * Re-Launches the vplug service.
+	 * The service will stay alive (or stop itself) depending on the settings.
+	 */
+	private void tickleService() {
+		Intent intent= new Intent(getApplicationContext(), VPlugService.class);
+		startService(intent);
+	}
+
 }
