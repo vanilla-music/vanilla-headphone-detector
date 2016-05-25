@@ -18,8 +18,6 @@
 
 package ch.blinkenlights.android.vanillaplug;
 
-
-import android.content.ComponentName;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,7 +31,6 @@ public class VPlug extends PreferenceActivity
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		ComponentName ss_ok;
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preferences);
 		PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this);
