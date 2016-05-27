@@ -29,7 +29,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.widget.Toast;
 import android.media.AudioManager;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 
