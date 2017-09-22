@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Fejhallgató észlelő a Vanilla zenelejátszóhoz</string>
+	<string name="ntfy_autolaunch">Fejhallgató észlelve: a Vanilla zenelejátszó indítása</string>
+	<string name="ntfy_nolaunch">A Vanilla lejátszó automatikus indításának kihagyása. (Hanglejátszás van folyamatban)</string>
+	<string name="preferences_title">Fejhallgató észlelés engedélyezése</string>
+	<string name="preferences_summary">A Vanilla zenelejátszó automatikus indítása fejhallgató csatlakoztatásakor</string>
+</resources>
