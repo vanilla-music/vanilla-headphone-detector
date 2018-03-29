@@ -92,7 +92,17 @@ public class VPlugService extends Service
 					ComponentName service = new ComponentName("ch.blinkenlights.android.vanilla","ch.blinkenlights.android.vanilla.PlaybackService");
 					Intent x = new Intent("ch.blinkenlights.android.vanilla.action.PLAY").setComponent(service);
 					x.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					startService(x);
+					
+					/* Android Oreo support */
+					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+						/* Android Oreo device */
+						startForegroundService(x);
+					}
+					else{
+						/* pre-Oreo device */
+						startService(x);
+					}
+
 				}
 				else {
 					Toast.makeText(ctx, R.string.ntfy_nolaunch, Toast.LENGTH_SHORT).show();
