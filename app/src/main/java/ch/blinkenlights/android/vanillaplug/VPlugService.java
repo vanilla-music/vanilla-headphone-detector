@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013-2015 Adrian Ulrich
+ * Copyright (C) 2018 Google Inc.
  *
  *   This file is part of VanillaPlug.
  *
@@ -26,6 +27,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Binder;
+import android.os.Build;
 import android.os.IBinder;
 import android.widget.Toast;
 import android.media.AudioManager;

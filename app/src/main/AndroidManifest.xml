@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 		package="ch.blinkenlights.android.vanillaplug"
-		android:versionName="1.6"
-		android:versionCode="160"
+		android:versionName="1.7"
+		android:versionCode="170"
 		android:installLocation="auto">
-
-	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="23" />
 
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
