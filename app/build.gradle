@@ -1,17 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    lintOptions {
-        disable 'MissingTranslation'
-        disable 'ExtraTranslation'
-    }
-
-    compileSdkVersion 27
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "ch.blinkenlights.android.vanillaplug"
         minSdkVersion 15
         targetSdkVersion 27
+        versionName "1.7"
+        versionCode 170
     }
 
     buildTypes {
@@ -22,6 +19,12 @@ android {
     }
 
     lintOptions {
-        abortOnError false
+        disable 'MissingTranslation', 'ExtraTranslation'
+    }
+
+    compileOptions {
+        encoding = 'UTF-8'
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }

@@ -18,16 +18,15 @@
 
 package ch.blinkenlights.android.vanillaplug;
 
-import android.content.SharedPreferences;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
-import android.util.Log;
-
 public class VPlug extends PreferenceActivity 
-	implements SharedPreferences.OnSharedPreferenceChangeListener {
+	implements OnSharedPreferenceChangeListener {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class VPlug extends PreferenceActivity
 	}
 
 	@Override
-	public void onSharedPreferenceChanged (SharedPreferences sharedPreferences, String key) {
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 		tickleService();
 	}
 

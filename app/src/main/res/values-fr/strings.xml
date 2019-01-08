@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Détecteur d'écouteurs pour Vanilla Music</string>
+	<string name="app_name">Détecteur d\'écouteurs pour Vanilla Music</string>
 	<string name="ntfy_autolaunch">Ecouteurs détectés: Lancement de Vanilla Music</string>
-	<string name="ntfy_nolaunch">Lancement automatique de Vanilla Music ignoré. (Le lecteur est déjà en cours de fonctionnement)</string>
+	<string name="ntfy_nolaunch">Lancement automatique de Vanilla Music ignoré (le lecteur est déjà en cours de fonctionnement)</string>
 	<string name="preferences_title">Activer le détection des écouteurs</string>
 	<string name="preferences_summary">Lancer automatiquement Vanilla Music lorsque des écouteurs sont connectés</string>
 </resources>

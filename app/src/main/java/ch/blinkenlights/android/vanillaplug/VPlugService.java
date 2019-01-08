@@ -26,6 +26,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
@@ -35,7 +36,7 @@ import android.preference.PreferenceManager;
 
 
 public class VPlugService extends Service 
-	implements SharedPreferences.OnSharedPreferenceChangeListener {
+	implements OnSharedPreferenceChangeListener {
 
 	private final IBinder vplug_binder = new LocalBinder();
 	private SharedPreferences mSharedPreferences;
@@ -76,7 +77,7 @@ public class VPlugService extends Service
 
 	private void stopOrKeepService() {
 		boolean serviceEnabled = mSharedPreferences.getBoolean("serviceEnabled", false);
-		if (serviceEnabled == false)
+		if (!serviceEnabled)
 			stopSelf();
 	}
 
@@ -100,11 +101,10 @@ public class VPlugService extends Service
 						/* Android Oreo device */
 						startForegroundService(x);
 					}
-					else{
+					else {
 						/* pre-Oreo device */
 						startService(x);
 					}
-
 				}
 				else {
 					Toast.makeText(ctx, R.string.ntfy_nolaunch, Toast.LENGTH_SHORT).show();
