@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Hoofdtelefoondetectie voor Vanilla Music</string>
+	<string name="ntfy_autolaunch">Hoofdtelefoon is gedetecteerd: Vanilla Music wordt gestart</string>
+	<string name="ntfy_nolaunch">Sla automatisch starten van Vanilla Music over. (Er is momenteel al geluid te horen)</string>
+	<string name="preferences_title">Activeer hoofdtelefoondetectie</string>
+	<string name="preferences_summary">Start Vanilla Music automatisch als hoofdtelefoon wordt ingeplugd</string>
+</resources>
